@@ -3,8 +3,20 @@ import axios from 'axios'
 import Head from "./head";
 import Body from "./body";
 
+import data from './db.json'
+
 const Table = () => {
-  const [tableData, setTableData] = useState([]);
+  const [tableData, setTableData] = useState(data.users);
+
+  const [order, setOrder] = useState("asc");
+
+
+     
+  
+  const handleChangeOrder=()=>{
+    if(order==="asc") setOrder("desc")
+    if(order==="desc") setOrder("asc")
+  }
 
 console.log("data table",tableData)
 
@@ -23,15 +35,36 @@ console.log("data table",tableData)
   const sortFunc = (column, order) => {
     
 
-    const afterSortData =  [...tableData].sort((a, b) =>
-      a[column].toString().localeCompare ( b[column].toString(),"en", {
-      numeric: true,
-     })  
-    );
-
+    const afterSortData =  [...tableData].sort((a, b) => (
+      
+    a[column].toLowerCase().toString() < b[column].toLowerCase().toString()   ? -1 : 1) 
+    
+    )
+     
+   
     console.log("after sort ", afterSortData);
     setTableData(afterSortData)
-  };
+
+
+     if(order==="asc") {setOrder("desc")
+    
+    }
+     if(order==="desc"){
+      const afterSortData =  [...tableData].sort((a, b) => (
+      
+        a[column].toLowerCase().toString() < b[column].toLowerCase().toString()   ? 1 : -1) 
+        
+        )
+         
+       
+        console.log("after sort ", afterSortData);
+        setTableData(afterSortData)
+      
+      setOrder("asc")}
+
+
+  }
+  
 
 
 
@@ -60,8 +93,8 @@ console.log("data table",tableData)
     <div className="main-section">
            
 
-      <table>
-        <Head columns={columns}   handleSort={sortFunc} handleFilter={filterFunc} />
+      <table >
+        <Head columns={columns} order={order}  handleSort={sortFunc} handleFilter={filterFunc} />
         <Body data={tableData} />
       </table>
     </div>

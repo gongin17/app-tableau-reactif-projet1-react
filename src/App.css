@@ -1,5 +1,5 @@
 .App {
-  height: 110vh;
+  height: 100%;
   width: 100%;
   background: #282c34;
   color: aliceblue;
@@ -55,6 +55,8 @@
   display:flex;
  
   justify-content: center;
+
+  margin-top: 45px;
 }
 
 table {
@@ -93,7 +95,7 @@ th {
 }
 
 /*creer condidat*/
-/* SignupForm.css */
+
 .signup-form  , .update-form{
   max-width: 400px;
   margin: 0 auto;
@@ -116,6 +118,15 @@ input[type="text"]
   width: 95%;
   padding: 10px;
  
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.input-filter{
+  width: 14px;
+  height: 10px;
+  padding: 5px;
+   margin:3px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
@@ -147,9 +158,9 @@ button {
   background-color: #e6e5e5;
   border: none;
   border-radius: 13px;
+   padding-top:6px;
+   margin: 5px;
+  text-align: center;
   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-
-}

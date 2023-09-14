@@ -36,9 +36,9 @@ const Body = ({data}) => {
               </td>
               <td>{user.nom}</td>
               <td>{user.numero}</td>
-
-              <td>{user.paiement}</td>
               <td>{user.dateexamen}</td>
+              <td>{user.paiement}</td>
+              
               <td>
            {checked  ?<button  
                          style={{backgroundColor:"#467e8d"}}

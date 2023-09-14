@@ -1,25 +1,17 @@
 import { useState , useEffect } from "react";
  import { FaSortDown ,FaSortUp } from "react-icons/fa";
  
- const Head = ({columns ,handleSort,handleFilter}) => {
+ const Head = ({columns ,handleSort,handleFilter,order}) => {
   
-  const [order, setOrder] = useState("asc");
-
-
-     
-  
-      const handleChangeOrder=()=>{
-        if(order==="asc") setOrder("desc")
-        if(order==="desc") setOrder("asc")
-      }
+ 
 
 
    return (
-     <>
+   
      
-     <thead>
-       <tr>
-     
+     <thead >
+       <tr >
+       <th ></th>
 
       {
               columns.map((el,idx)=>(
@@ -31,24 +23,24 @@ import { useState , useEffect } from "react";
       { order==="asc"? <FaSortDown 
       
       onClick={()=>handleSort(el,order)} 
-      style={{fontSize:'30px', color:'white' ,background: '#467e8d '}}  />
+      style={{fontSize:'30px', color:'white' ,background: '#467e8d ' ,margin:"3px"}}  />
        :<FaSortUp  onClick={()=>handleSort(el,order)}
        
        style={{fontSize:'30px', color:'white' ,background: '#467e8d '}}  />      
               
     }
-     {el}<input  type='text' onChange={(e)=>handleFilter(el,e.target.value)}   /></th>
+     {el}<input  type='text' className="input-filter" 
+     onChange={(e)=>handleFilter(el,e.target.value)}   /></th>
 
 
 
      ))
           }     
-  
+         <th ></th>
           </tr>
         </thead>
      
-     
-     </>
+    
    )
  }
  
