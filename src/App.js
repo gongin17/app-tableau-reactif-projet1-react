@@ -19,7 +19,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Dashboad />} />
-        <Route path="/condidats/::uId" element={<UpdateUser/>} />
+        <Route path="/condidats/:uId" element={<UpdateUser/>} />
         <Route path="/creer" element={<CreateUser/>} />
 
       </Routes>
