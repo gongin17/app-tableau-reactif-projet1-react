@@ -1,7 +1,7 @@
 .App {
-  height: 100%;
+  /*height: 100%;*/
   width: 100%;
-  background: #282c34;
+ 
   color: aliceblue;
   padding-top: 30px;
 
@@ -69,6 +69,8 @@ table {
   border-radius: 10px;
   overflow: hidden;
   width:1000px;
+
+  /*overflow-x: auto;*/
  
 
 
@@ -164,3 +166,20 @@ button {
   
 }
 
+@media (max-width: 600px) {
+  table {
+  
+    margin: 0 auto;
+    overflow-x: auto;
+   
+  }
+
+  .box-group{
+    flex-direction: column;
+   
+  }
+  .box{
+    width: 300px;
+    margin: auto;
+  }
+}

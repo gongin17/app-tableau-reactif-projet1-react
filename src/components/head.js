@@ -1,14 +1,12 @@
 import { useState , useEffect } from "react";
  import { FaSortDown ,FaSortUp } from "react-icons/fa";
  
- const Head = ({columns ,handleSort,handleFilter,order}) => {
+ const Head = ({columns ,handleSort,selectKeyword,selectColumn,order}) => {
   
  
 
 
    return (
-   
-     
      <thead >
        <tr >
        <th ></th>
@@ -16,21 +14,27 @@ import { useState , useEffect } from "react";
       {
               columns.map((el,idx)=>(
               
-     <th key={idx}
-               
-              >
+  <th key={idx}>
                 
-      { order==="asc"? <FaSortDown 
-      
+   { order==="asc" ? 
+
+    <FaSortDown 
       onClick={()=>handleSort(el,order)} 
       style={{fontSize:'30px', color:'white' ,background: '#467e8d ' ,margin:"3px"}}  />
-       :<FaSortUp  onClick={()=>handleSort(el,order)}
-       
-       style={{fontSize:'30px', color:'white' ,background: '#467e8d '}}  />      
-              
+       :   
+    <FaSortUp  
+       onClick={()=>handleSort(el,order)}
+       style={{fontSize:'30px', color:'white' ,background: '#467e8d '}}  />              
     }
-     {el}<input  type='text' className="input-filter" 
-     onChange={(e)=>handleFilter(el,e.target.value)}   /></th>
+     {el}
+
+   <input  type='text' className="input-filter" 
+     onChange={(e)=>{
+      selectKeyword(e.target.value)
+      selectColumn(el)
+    }}/>
+    
+    </th>
 
 
 

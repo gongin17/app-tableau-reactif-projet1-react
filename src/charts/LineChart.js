@@ -2,12 +2,19 @@ import React from 'react';
 import {Chart} from 'react-google-charts'
 
 export const data = [
-    ["", ""],
-    ["", 11],
-    ["", 2],
-    ["", 2],
-    ["", 2],
-    ["", 7],
+    ["Mois", "paiement"],
+    ["Janvier", 11],
+    ["février", 2],
+    ["avril", 2],
+    ["mai", 2],
+    ["juin", 7],
+    ["juillet", 7],
+    ["août", 7],
+    ["septembre", 7],
+    ["octobre", 7],
+    ["novembre ", 7],
+    ["décembre ", 7],
+    
   ];
   export const options = {
     title: "",

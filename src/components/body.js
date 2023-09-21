@@ -1,5 +1,3 @@
-
-
 import  React , { useState } from "react"
 import { useNavigate } from "react-router-dom"
  import { FaPen } from "react-icons/fa"
@@ -7,7 +5,8 @@ import { useNavigate } from "react-router-dom"
 const Body = ({data}) => {
 
         const [checked, setChecked]=useState(false)
-  
+        
+      
 
         const navigate=useNavigate()
        
@@ -17,20 +16,14 @@ const Body = ({data}) => {
   return (
     <>
            
-      
-           <tbody>
+           <tbody className="">
       
         {data?.map((user) => {
           return (
             <tr className="" key={user.id}>
               <td>
-              <input  type='checkbox'   id=""
-          name=""
-          value=""
-          checked={checked}
-          onChange={handleOnChange}   />
+               <input type='checkbox' id=""  name="" value="" checked={checked} onChange={handleOnChange}/>
               </td>
-
               <td>
               {user.id}
               </td>

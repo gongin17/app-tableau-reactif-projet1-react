@@ -27,12 +27,15 @@ const Dashboad = () => {
 
   return (
     <div>
-
+         <div>
           <h1 style={{textAlign:"center"}}>Tableau de bord interactif</h1>
-
-        <div style={{display:"flex",justifyContent:"start" , margin:"20px 0 40px 150px"}}>
+         <div style={{display:"flex",justifyContent:"start" , margin:"20px 0 40px 150px"}}>
           <button onClick={()=>navigate('/creer')} className="signup-btn">Créer un candidat</button>
         </div>
+
+        </div>
+
+
         <div className="box-group">
               <div className="box"> <h3 className="">total des candidats</h3>
               <h1 className="">{data.users.length}</h1>
@@ -42,9 +45,12 @@ const Dashboad = () => {
               <h1 className="">{sum} MAD</h1>
                </div>
               <div className="box"> <Charts/>
-              </div>
+              </div> 
             </div>
-        <Table/>
+
+
+
+            <div> <Table/></div>
 
 
     </div>
